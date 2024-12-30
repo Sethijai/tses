@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Link with Token</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
+        }
+        .button {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007bff;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Dynamic Link with Token</h1>
+    <p>Click the buttons below:</p>
+
+    <script>
+        // Get the token from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get("token") || "defaultToken";
+
+        // Create the button links
+        const telegramLink = `https://t.me/AK_LECTURES_BOT?start=${token}`;
+        
+        // Insert buttons into the page
+        document.write(`
+            <a href="${telegramLink}" class="button">Open Telegram Link</a>
+            <a href="${window.location.origin}/anotherPage?token=${token}" class="button">Another Page</a>
+        `);
+    </script>
+</body>
+</html>

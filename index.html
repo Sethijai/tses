@@ -18,12 +18,17 @@
             color: white;
             background-color: #007bff;
             text-decoration: none;
-            border-radius: 5px;
-            border: none;
+            border: 2px solid black; /* Adding black border */
+            border-radius: 0px; /* Square corners */
             cursor: pointer;
         }
         .button:hover {
             background-color: #0056b3;
+        }
+        .no-copy {
+            user-select: none; /* Disables text selection */
+            -webkit-user-select: none; /* Disables text selection for Safari */
+            -moz-user-select: none; /* Disables text selection for Firefox */
         }
     </style>
 </head>
@@ -41,8 +46,8 @@
         
         // Insert buttons into the page
         document.write(`
-            <a href="${telegramLink}" class="button">Open Telegram Link</a>
-            <a href="${window.location.origin}/anotherPage?token=${token}" class="button">Another Page</a>
+            <a href="${telegramLink}" class="button no-copy">Open Telegram Link</a>
+            <a href="${window.location.origin}/anotherPage?token=${token}" class="button no-copy">Another Page</a>
         `);
     </script>
 </body>
